@@ -45,9 +45,13 @@ Si utilizas una máquina virtual de Google Cloud, selecciona dos nombres dentro 
   - Crear enlace simbólico `yy` en `33`, apuntando a `44`.
   - Capturar pantalla accediendo a:
     - `http://www.exemplo.lan/33/yy`
+    ![comprobacion](./img/cap11.png)
     - `http://www.exemplo.lan/33/imaxes`
+    ![comprobacion](./img/cap8.png)
     - `http://www.exemplo.lan/44`
+    ![comprobacion](./img/cap9.png)
     - `http://www.exemplo.lan/22`
+    ![comprobacion](./img/cap10.png)
 - Configurar `http://www.exemplo.lan/datos` para que acceda a `/opt/web/exemplo.lan/datos` sin alterar el sistema de archivos. Capturar pantalla.
 
 ## 3. Configuración de `.htaccess` en el directorio `50`
@@ -57,7 +61,9 @@ Si utilizas una máquina virtual de Google Cloud, selecciona dos nombres dentro 
     ```
     un.html, dous.html, tres.html
     ```
+  ![comprobacion](./img/cap6.png)
   - En el subdirectorio `abc`, la prioridad será `tres.html, dous.html, un.html`.
+  ![comprobacion](./img/cap7.png)
   - **No permitir acceso** al subdirectorio `segredo`.
   - En `imaxes`, habilitar el listado de contenido si no existen archivos de inicio.
   - **Errores** en directorios sin permisos deben ser no fatales.
