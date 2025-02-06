@@ -82,3 +82,10 @@ Si utilizas una máquina virtual de Google Cloud, selecciona dos nombres dentro 
 - Configurar correctamente el host virtual y la ubicación de los archivos `.htaccess`.
 - Capturar pantalla de la configuración aplicada.
 
+
+## 6. Adjunta una foto de la configuración de apache
+En este apartado deberás adjuntar una foto de la configuración de apache que has realizado para completar los ejercicios.
+
+
+![confApache](./img/confApache.png)
+
