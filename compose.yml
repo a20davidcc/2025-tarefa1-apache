@@ -3,9 +3,11 @@ services:
     build: apache
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./apache/tarefa1.conf:/etc/apache2/sites-enabled/tarefa1.conf
       - ./david.lan:/opt/web/david.lan
+      - ./certificados:/certificados
 
     networks:
       redeapache:
