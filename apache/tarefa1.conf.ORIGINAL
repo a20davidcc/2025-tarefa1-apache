@@ -1,0 +1,56 @@
+<VirtualHost *:80>
+    ServerName www.david.lan
+    ServerAlias david.lan eq1.david.lan
+    ServerAdmin a20davidcc@iessanclemente.net
+    
+    
+    # Carpeta en la que está el contenido del servidor web
+    DocumentRoot /opt/web/david.lan/htdocs
+    
+
+    <Directory /opt/web/david.lan/htdocs>
+        # Al poner esto aquí se herencia al resto de carpetas
+        Require all granted
+        DirectoryIndex inicio.html indice.html primeiro.html
+    </Directory>
+
+    
+    <Directory /opt/web/david.lan/htdocs/33>
+        DirectoryIndex indice.html inicio.html primeiro.html
+        # Habilitamos la opción de listar contenido si no hay
+        # archivos de inicio y deshabilitamos enlaces simbólicos
+         Options -FollowSymLinks +Indexes
+    </Directory>
+    Options Includes FollowSymLinks
+
+    # Creamos el alias de /datos
+    Alias /datos /opt/web/david.lan/datos
+    # Le damos permisos, ya que el de arriba solo se aplica a htdocs/
+    <Directory /opt/web/david.lan/datos>
+        Require all granted
+    </Directory>
+
+
+    <Directory /opt/web/david.lan/htdocs/50>
+        AllowOverride Indexes AuthConfig Options 
+    </Directory>
+
+</VirtualHost>
+
+
+<VirtualHost *:443>
+    ServerName www.david.lan
+    ServerAlias david.lan eq1.david.lan
+    ServerAdmin a20davidcc@iessanclemente.net
+
+    SSLEngine on
+    SSLCertificateFile /certificados/david.pem
+    SSLCertificateKeyFile /certificados/david.key
+    
+    DocumentRoot /opt/web/david.lan/htdocs
+
+    <Directory /opt/web/david.lan/htdocs>
+        Require all granted
+        DirectoryIndex inicio.html indice.html primeiro.html
+    </Directory>
+</VirtualHost>
